@@ -1,0 +1,53 @@
+#include <iostream>
+
+using namespace std;
+
+class Forma {
+
+public:
+    int largo, ancho;
+    string nombre;
+    Forma(int, int);
+    void imprimir_forma();
+    void cambiar_forma();
+    void obtener_forma();
+
+};
+
+Forma::Forma(int _largo, int _ancho){
+    largo = _largo;
+    ancho = _ancho;
+}
+
+void Forma::obtener_forma(){
+    cout<<"Escriba la forma: ";
+    getline(cin,nombre);cout<<endl;
+    cout<<"Escriba el largo: ";
+    cin>>largo;
+    cout<<"Escriba la ancho: ";
+    cin>>ancho;
+}
+
+void Forma::imprimir_forma(){
+    for (int i= 1; i<=ancho;i++){
+        cout<<"*";
+    }
+    for(int i = 2; i<largo; i++){
+        cout <<"\n*";
+        for (int espacio = 2; espacio<ancho;espacio++){
+            cout<<" ";
+        }
+        cout<<"*";
+    }
+    cout <<""<<endl;
+    for(int i=1 ; i<=ancho; i++){
+        cout <<"*";
+    }
+}
+
+int main()
+{
+    Forma f;
+    f.obtener_forma();
+    f.imprimir_forma();
+}
